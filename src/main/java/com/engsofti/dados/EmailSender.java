@@ -47,6 +47,14 @@ public class EmailSender {
 		return true;
 	}
 	
+	public Boolean enviaBoasVindas(Aluno aluno){
+		sendMail("paulopagl@gmail.com",aluno.getEmail(),
+				"Boas-Vindas", 
+				"Olá "+aluno.getNome()+". Você acaba de fazer um cadastro no gerenciador de tarefas " +
+						"acadêmicas. Esperamos que tenha bons resultados. Seja bem-vindo!");
+		return true;
+	}
+	
 	public Boolean compareDateTime(DateTime dia, DateTime hoje){
 		if(dia.getDayOfMonth() - 1 == hoje.getDayOfMonth() 
 			&& dia.getMonthOfYear() == hoje.getMonthOfYear()

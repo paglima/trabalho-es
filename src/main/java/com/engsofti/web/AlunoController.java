@@ -91,7 +91,8 @@ public class AlunoController {
 							@RequestParam("matricula") String matricula,
 							@RequestParam("curso") String curso ) {
 		
-		Aluno aluno = new Aluno().setEmail(email).setMatricula(matricula).setNome(nome);
+		Aluno aluno = new Aluno().setEmail(email).setMatricula(matricula).setNome(nome).setSenha(senha);
+		this.email.enviaBoasVindas(aluno);
 		repositorio.salvaOuAtualiza(aluno);
 		
 		
