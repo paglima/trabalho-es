@@ -73,7 +73,7 @@ public class AlunoController {
 		System.out.println(disciplina.getNome());
 
 		System.out.println(disciplina.getAtividades());
-		return "redirect:listaDisciplinas";
+		return "listaDisciplinas";
 	}
 	
 	@RequestMapping(value="/cadastroAluno", method = RequestMethod.GET)
