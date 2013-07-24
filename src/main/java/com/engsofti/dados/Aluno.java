@@ -28,9 +28,9 @@ public class Aluno{
 	}
 	
 	
-	public Disciplina encontraDisciplinaPeloNome(String nome){
+	public Disciplina encontraDisciplinaPeloId(String id){
 		for (Disciplina d : disciplinas) {
-			if(d.getNome().equals(nome)){
+			if(d.getId().equals(id)){
 				return d;
 			}
 		}

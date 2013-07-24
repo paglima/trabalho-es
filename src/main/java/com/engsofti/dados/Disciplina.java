@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Disciplina {
 	
+	private String id;
+	
 	private String nome;
 	
 	private int cargaHoraria;
@@ -23,7 +25,6 @@ public class Disciplina {
 	private List<Atividade> atividades; 
 	
 	public Disciplina(){
-		
 	}
 	
 	public Disciplina(String nome, String nomeProfessor){
@@ -41,6 +42,9 @@ public class Disciplina {
 		return (soma/(double)atividades.size());
 	}
 	
+	public String geraId(){
+		return periodo.toString().replace(".", "")+nome;
+	}
 
 	public String getNome() {
 		return nome;
@@ -77,16 +81,28 @@ public class Disciplina {
 		return cargaHoraria;
 	}
 
-	public void setCargaHoraria(int cargaHoraria) {
+	public Disciplina setCargaHoraria(int cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
+		return this;
 	}
 
 	public Periodo getPeriodo() {
 		return periodo;
 	}
 
-	public void setPeriodo(Periodo periodo) {
+	public Disciplina setPeriodo(Periodo periodo) {
 		this.periodo = periodo;
+		this.id		 = geraId();
+		return this;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public Disciplina setId(String id) {
+		this.id = id;
+		return this;
 	}
 
 	

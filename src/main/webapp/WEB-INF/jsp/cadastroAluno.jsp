@@ -24,54 +24,52 @@
     </head>
     <body>    
         <form action="cadastroAluno" class="register" method="post">
-            <h1>Cadastro</h1>
+            <h1>Cadastro Aluno</h1>
             <fieldset class="row1">
                 <legend>Detalhes do Cadastro</legend>
                 <p>
-                    <label>Email *</label><input type="text" name="email"/>
+                    <label>Email *</label><input type="text"  required="" name="email"/>
                     <label>Repita o email *</label><input type="text"/>
                 </p>
                 <p>
                     <label>Senha*</label>
-                    <input type="text" name="senha"/>
+                    <input type="text" name="senha" required=""/>
                     <label>Repita a senha*</label>
                     <input type="text"/>
                     <label class="obinfo">* Campos Obrigatórios</label>
                 </p>
             </fieldset>
             <fieldset class="row2">
-                <legend>Detalhes do Aluno
-                </legend>
+                <legend>Detalhes do Aluno</legend>
                 <p>
                     <label>Nome *</label>
-                    <input type="text" class="long" name="nomeAluno"/>
+                    <input type="text" class="long" required="" name="nomeAluno" />
                 </p>
                 <p>
                     <label>Matricula *</label>
-                    <input type="text" class="long" name="matricula"/>
-                </p>
-                <p>
-                	<label>Curso *
-                    </label>
-                    <input type="text" class="long" name="curso"/>
+                    <input type="text" class="long" required="" name="matricula"/>
                 </p>
             </fieldset>
             <fieldset class="row3">
-                <legend>Outras Informações</legend>
+                <legend>Curso</legend>
                 <p>
-                    <label>Sexo *</label>
-                    <input type="radio" value="radio"/>
-                    <label class="gender">Male</label>
-                    <input type="radio" value="radio"/>
-                    <label class="gender">Female</label>
+                    <label>Nome *</label>
+                    <input type="text" style="width:212px;font-size: 13px" class="long" name="nomeCurso"/>
                 </p>
                 <p>
-                    <label>Data de Nasc. *</label>
-                    <input style="width:212px;font-size: 13px" type="text" id="dataNasc" class="long"/>
+                    <label>CHOb *</label>
+                    <input style="width:212px;font-size: 13px" type="text" id="chob" class="long"/>
+                </p>
+                 <p>
+                    <label>CHOpt *</label>
+                    <input style="width:212px;font-size: 13px" type="text" id="chopt" class="long"/>
+                </p>
+                 <p>
+                    <label>CHComp *</label>
+                    <input style="width:212px;font-size: 13px" type="text" id="chcomp" class="long"/>
                 </p>
             </fieldset>
             <fieldset class="row4">
-                <legend>Terms and Mailing</legend>
                 <a href="login" class="button">Voltar</a> 
             </fieldset>
             <div>

@@ -25,14 +25,14 @@
 		
     </head>
     <body>    
-    <input type="hidden" name="nomeDisciplina" value="${nomeDisciplina}"></input>
+    <input type="hidden" name="id" value="${id}"></input>
         <form action="../cadastraAtividade" class="register" method="post">
-            <h1>Atividade</h1>
+            <h1>Atividade -- ${id} </h1>
             <fieldset class="row1">
                 <legend>Detalhes do Cadastro</legend>
                 <p>
                     <label>Nota </label><input type="text" name="notaAtividade"/>
-                    <label>Data</label><input type="text" name="dataAtividade" id="dataAtividade"/>
+                    <label>Data/Hora</label><input type="text" name="dataAtividade" id="dataAtividade"/>
                 </p>
                 <p>
                     <label>Conteudo </label><input type="text" name="conteudoAtividade"/>
@@ -48,8 +48,8 @@
                 </p>
             </fieldset>
            
-            <div>
-            	<input class="button" type="submit" value="Registre-se" />
+            <div style="position:relative;left:600px;">
+            	<input class="button" type="submit" value="Cadastrar" />
             </div>
 <!--             <button class="button">Register &raquo;</button> -->
         </form>

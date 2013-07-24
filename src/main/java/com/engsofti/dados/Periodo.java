@@ -10,9 +10,9 @@ public class Periodo {
 		
 	}
 	
-	public Periodo(int ano, int semestre){
-		this.ano 	  = ano;
-		this.semestre = semestre;
+	public Periodo(String anoSemestre){
+		this.ano 	  = Integer.parseInt(anoSemestre.substring(0,4));
+		this.semestre = Integer.parseInt(anoSemestre.substring(5,6));
 	}
 
 	public int getAno() {

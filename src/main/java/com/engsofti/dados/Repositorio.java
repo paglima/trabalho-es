@@ -26,9 +26,9 @@ public class Repositorio {
 	public Repositorio(){
 		alunos		= new HashMap<String,Aluno>();
 		Aluno paulo = new Aluno().setMatricula("21031131").setNome("Paulo").setSenha("123").setEmail("pauloarthur@id.uff.br");
-		paulo.getDisciplinas().add(new Disciplina("ES","Viviane"));
+		paulo.getDisciplinas().add(new Disciplina("ES","Viviane").setPeriodo(new Periodo("2013.1")));
 		paulo.getDisciplinas().get(0).getAtividades().add(new Prova("ES",new DateTime(2013, 7, 20, 9, 0),9.0,2,"Design Pattern"));
-		paulo.getDisciplinas().add(new Disciplina("ED2","Viterbo"));
+		paulo.getDisciplinas().add(new Disciplina("ED2","Viterbo").setPeriodo(new Periodo("2013.1")));
 		alunos.put("21031131", paulo);
 	}
 
@@ -40,7 +40,7 @@ public class Repositorio {
 		alunos.put(aluno.getMatricula(),aluno);
 	}
 	
-	public List<Disciplina> encontraDisciplinas(String matricula) {
+	public List<Disciplina> listaDisciplinas(String matricula) {
 		return alunos.get(matricula).getDisciplinas();
 	}
 	

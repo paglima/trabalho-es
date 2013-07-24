@@ -31,15 +31,20 @@
                 <legend>Detalhes do Cadastro</legend>
                 
                 <p>
-                    <label>Nome Disciplina</label>
+                    <label>Nome</label>
                     <form:input name="senha" path="nome"/>
-                    <label>Nome Professor</label>
+                    <label>Professor</label>
                     <form:input name="senha" path="nomeProfessor"/>
+                </p>
+                <p>
+                    <label>Carga Horaria</label>
+                    <form:input name="cargaHoraria" path="cargaHoraria"/>
+                    <label>Periodo</label>
+                    <input type="text" name="periodo" placeholder="Ex: 2010.1"/>
                 </p>
             </fieldset>
             <fieldset class="row2">
-                <legend>Detalhes do Aluno
-                </legend>
+                <legend>Detalhes do Disciplina</legend>
                 <p>
                     <label>Nome *</label>
                     <input type="text" class="long" name="nomeAluno"/>

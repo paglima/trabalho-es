@@ -13,9 +13,10 @@
     	<intercept-url pattern="/cadastroUsuario" access="permitAll" />
     	<intercept-url pattern="/cadastroAtividade" access="permitAll" />
     	<intercept-url pattern="/cadastroAluno" access="permitAll" />
-    	<intercept-url pattern="/cadastraAtividade" access="permitAll" />
+    	<intercept-url pattern="/cadastraAtividade" access="hasRole('ROLE_USER')" />
     	<intercept-url pattern="/cadastroDisciplina" access="hasRole('ROLE_USER')" />
-        <form-login login-page="/login" default-target-url="/cadastroDisciplina" authentication-failure-url="/login?loginError=true"/>
+    	<intercept-url pattern="/listaDisciplina" access="hasRole('ROLE_USER')" />
+        <form-login login-page="/login" default-target-url="/listaDisciplina" authentication-failure-url="/login?loginError=true"/>
 		<logout logout-success-url="/login" />
     </http>
 	

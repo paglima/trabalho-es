@@ -20,11 +20,7 @@
 <%-- 				<td>${veiculo.id}</td> --%>
 				<td align="center">${disciplina.nome}</td>
 				<td align="center">${disciplina.nomeProfessor}</td>
-				<td><a href="cadastraAtividade/${disciplina.nome}">Editar</a></td>
-				
-				
-			 	
-			
+				<td><a href="cadastraAtividade/${disciplina.id}">Adicionar Atividade</a></td>
 			</tr>
 		</c:forEach>
 	</table>
