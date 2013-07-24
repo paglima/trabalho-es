@@ -26,7 +26,7 @@
     </head>
     <body>    
     <input type="hidden" name="id" value="${id}"></input>
-        <form action="../cadastraAtividade" class="register" method="post">
+        <form action="../cadastraAtividade/${id}" class="register" method="post">
             <h1>Atividade -- ${id} </h1>
             <fieldset class="row1">
                 <legend>Detalhes do Cadastro</legend>

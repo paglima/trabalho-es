@@ -1,11 +1,14 @@
 package com.engsofti.dados;
 
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+import com.engsofti.utils.CommonUtil;
 
 public abstract class Atividade {
 	
 	private DateTime data;
-	private String nome;
 	private Double nota;
 	private Integer peso;
 	private String conteudo;
@@ -16,8 +19,8 @@ public abstract class Atividade {
 		return data;
 	}
 
-	public void setData(DateTime data) {
-		this.data = data;
+	public void setData(String dataHora) {
+		this.data = CommonUtil.stringToDateTime(dataHora);
 	}
 	
 	public Double getNota() {
@@ -42,14 +45,6 @@ public abstract class Atividade {
 	
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 }

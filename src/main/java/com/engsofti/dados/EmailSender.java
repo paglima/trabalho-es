@@ -39,7 +39,7 @@ public class EmailSender {
 				if(compareDateTime(at.getData(),hoje)){
 					sendMail("paulopagl@gmail.com",aluno.getEmail(),
 							"Lembrete de Prova", 
-							"Olá "+aluno.getNome()+", você tem "+ getNameInstance(at)+ " de "+at.getNome()+
+							"Olá "+aluno.getNome()+", você tem "+ getNameInstance(at)+ " de "+d.getNome()+
 							" amanhã as "+ at.getData().toString("HH:mm"));
 				}
 			}

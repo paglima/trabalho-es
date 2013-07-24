@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.engsofti.dados.Aluno;
+import com.engsofti.dados.Atividade;
 import com.engsofti.dados.Disciplina;
 import com.engsofti.dados.EmailSender;
 import com.engsofti.dados.Periodo;
 import com.engsofti.dados.Repositorio;
+import com.engsofti.factory.AtividadeFactory;
 
 @Controller
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
@@ -41,6 +43,9 @@ public class AlunoController {
 		String matriculaSessao = getMatriculaAlunoSessao();
 		Aluno aluno=repositorio.encontraAluno(matriculaSessao);
 		disciplina.setPeriodo(new Periodo(periodo));
+		if(disciplina.getAtividades()!=null){
+			System.out.println(disciplina.getAtividades());
+		}
 		System.out.println(disciplina.getId());
 		System.out.println(aluno.getNome());
 		aluno.getDisciplinas().add(disciplina);
@@ -56,24 +61,42 @@ public class AlunoController {
 		return new ModelAndView("listaDisciplinas","disciplinas",aluno.getDisciplinas());
 	}
 	
+	@RequestMapping(value="/listaAtividades/{id}", method = RequestMethod.GET)
+	public ModelAndView listaAtividades(@PathVariable String id) {
+		Disciplina disciplina = repositorio.encontraAluno(getMatriculaAlunoSessao()).encontraDisciplinaPeloId(id);
+		return new ModelAndView("listaAtividades","atividades",disciplina.getAtividades());
+	}
+	
 	@RequestMapping(value="/cadastraAtividade/{id}", method = RequestMethod.GET)
 	public ModelAndView cadastraAtividade(@PathVariable String id) {
 		return new ModelAndView("cadastroAtividade","id",id);
 	}
 	
-	@RequestMapping(value="/cadastraAtividade", method = RequestMethod.POST)
+	@RequestMapping(value="/cadastraAtividade/{id}", method = RequestMethod.POST)
 	public String cadastraAtividadePost(@RequestParam("pesoAtividade") String peso,
 										@RequestParam("dataAtividade") String data,
 										@RequestParam("conteudoAtividade") String conteudo,
 										@RequestParam("notaAtividade") String nota,
 										@RequestParam("tipoAtividade") String tipoAtividade,
-										@RequestParam("id") String id) {
-		Disciplina disciplina = repositorio.encontraAluno(getMatriculaAlunoSessao()).encontraDisciplinaPeloId(id);
-		System.out.println(id);
-		System.out.println(disciplina.getNome());
-
-		System.out.println(disciplina.getAtividades());
-		return "redirect:listaDisciplinas";
+										@PathVariable String id) {
+		
+		try {
+			System.out.println(id);
+			Disciplina disciplina = repositorio.encontraAluno(getMatriculaAlunoSessao()).encontraDisciplinaPeloId(id);
+			
+			System.out.println(disciplina.getNome());
+			Atividade atividade = AtividadeFactory.criaAtividade(tipoAtividade);
+			atividade.setPeso(Integer.parseInt(peso));
+			atividade.setData(data);
+			atividade.setConteudo(conteudo);
+			atividade.setNota(Double.parseDouble(nota));
+			System.out.println(disciplina.getAtividades().add(atividade));
+			System.out.println(disciplina.getAtividades());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//		System.out.println(disciplina.getAtividades());
+		return "redirect:../listaDisciplina";
 	}
 	
 	@RequestMapping(value="/cadastroAluno", method = RequestMethod.GET)

@@ -1,6 +1,5 @@
 package com.engsofti.dados;
 
-import org.joda.time.DateTime;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,8 +10,7 @@ public class Prova extends Atividade{
 		
 	}
 	
-	public Prova(String nome,DateTime data,Double nota,Integer peso,String conteudo){
-		super.setNome(nome);
+	public Prova(String data,Double nota,Integer peso,String conteudo){
 		super.setData(data);
 		super.setNota(nota);
 		super.setPeso(peso);

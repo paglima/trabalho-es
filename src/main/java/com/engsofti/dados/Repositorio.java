@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.joda.time.DateTime;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,7 +26,7 @@ public class Repositorio {
 		alunos		= new HashMap<String,Aluno>();
 		Aluno paulo = new Aluno().setMatricula("21031131").setNome("Paulo").setSenha("123").setEmail("pauloarthur@id.uff.br");
 		paulo.getDisciplinas().add(new Disciplina("ES","Viviane").setPeriodo(new Periodo("2013.1")));
-		paulo.getDisciplinas().get(0).getAtividades().add(new Prova("ES",new DateTime(2013, 7, 20, 9, 0),9.0,2,"Design Pattern"));
+		paulo.getDisciplinas().get(0).getAtividades().add(new Prova("24/07/2013 03:10:00",10.0,2,"Design Pattern"));
 		paulo.getDisciplinas().add(new Disciplina("ED2","Viterbo").setPeriodo(new Periodo("2013.1")));
 		alunos.put("21031131", paulo);
 	}
