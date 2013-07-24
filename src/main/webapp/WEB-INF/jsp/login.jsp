@@ -21,7 +21,7 @@
 						</div>
 						<div>
 							<input type="submit" value="Log in" />
-							<a href="cadastroAluno">Cadastre-se!</a>
+							<a href="cadastraAluno">Cadastre-se!</a>
 						</div>
 					</form><!-- form -->
 					

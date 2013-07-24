@@ -99,28 +99,23 @@ public class AlunoController {
 		return "redirect:../listaDisciplina";
 	}
 	
-	@RequestMapping(value="/cadastroAluno", method = RequestMethod.GET)
+	@RequestMapping(value="/cadastraAluno", method = RequestMethod.GET)
 	public String cadastro() {
 		return "cadastroAluno";
 	}
 	
-	@RequestMapping(value="/cadastroAluno", method = RequestMethod.POST)
-	public String cadastro(@RequestParam("nomeAluno") String nome,
+	@RequestMapping(value="/cadastraAluno", method = RequestMethod.POST)
+	public String cadastroPost(@RequestParam("nomeAluno") String nome,
 							@RequestParam("senha") String senha,
 							@RequestParam("email") String email,
-							@RequestParam("matricula") String matricula,
-							@RequestParam("curso") String curso ) {
+							@RequestParam("matricula") String matricula) {
 		
-		Aluno aluno = new Aluno()
-							.setEmail(email)
-							.setMatricula(matricula)
-							.setNome(nome)
-							.setSenha(senha);
+		Aluno aluno = new Aluno().setEmail(email).setMatricula(matricula).setNome(nome).setSenha(senha);
 		this.email.enviaBoasVindas(aluno);
 		repositorio.salvaOuAtualiza(aluno);
 		
 		
-		return"login";
+		return "login";
 	}
 	
 	public String getMatriculaAlunoSessao(){

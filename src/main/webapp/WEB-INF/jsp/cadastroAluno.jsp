@@ -23,7 +23,7 @@
 		
     </head>
     <body>    
-        <form action="cadastroAluno" class="register" method="post">
+        <form action="cadastraAluno" class="register" method="post">
             <h1>Cadastro Aluno</h1>
             <fieldset class="row1">
                 <legend>Detalhes do Cadastro</legend>

@@ -10,9 +10,8 @@
     <http auto-config="true" use-expressions="true">
     	<intercept-url pattern="/JScript/**" access="permitAll" />
     	<intercept-url pattern="/css/**" access="permitAll" />
-    	<intercept-url pattern="/cadastroUsuario" access="permitAll" />
     	<intercept-url pattern="/cadastroAtividade" access="permitAll" />
-    	<intercept-url pattern="/cadastroAluno" access="permitAll" />
+    	<intercept-url pattern="/cadastraAluno" access="permitAll" />
     	<intercept-url pattern="/cadastraAtividade" access="hasRole('ROLE_USER')" />
     	<intercept-url pattern="listaAtividades" access="hasRole('ROLE_USER')" />
     	<intercept-url pattern="/cadastraAtividade" access="hasRole('ROLE_USER')" />
